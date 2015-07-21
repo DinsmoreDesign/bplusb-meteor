@@ -1,0 +1,225 @@
+/*colors gray C0C0C0 black 0D0D0D white-text F3F3F3*/
+a {color: inherit; text-decoration: none;}
+a:hover { text-decoration: none;  font-weight: bold;}
+/*a:-webkit-any-link { text-decoration: none; }*/
+
+.navbar .nav,
+.navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.navbar-inner { text-align:center;}
+
+.navbar {
+  margin-bottom:0;
+}
+
+.bplusb-box { margin-bottom: 50px}
+
+/*EVENTS INFO SECTION*/
+.event-info-box {}
+.events-timeline-table td { width: 500px;}
+.events-timeline-table, .events-directions-table {
+  height: 450px;
+}
+.event-text span {margin-left:15px;}
+.event-icon {width: 150px;}
+.directions-btn { width: 100%; }
+
+.event-float {float: left;}
+
+/*TRAVEL SECTION*/
+.travel-box {}
+.travel-img { width: 100%; height: 100% }
+
+.wedding-party-box {}
+
+.gallery-box {}
+
+.registry-box {}
+
+.travel-link { color: #2a8b43 }
+
+/*credits*/
+.credits-box { position: relative; }
+
+.credits-box {
+  background-color: #C0C0C0;
+  min-height: 350px;
+}
+
+.credits-box div span:first-child {
+  padding-top: 50px;
+  text-align: center;
+  color: #F3F3F3;
+  margin: auto;
+  display: inherit;
+}
+
+.credits-text {
+  color: #0D0D0D;
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+}
+
+
+
+/*PICTURE GALLERY*/
+#pictureGallery { 
+  width: 100%; 
+  margin: auto;}
+
+.pictures-box { margin: 15px;}
+
+.brick img {
+  margin: 0;
+  display: block;
+}
+
+img.desaturate{
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+filter: gray;
+filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+.desaturate:hover {
+filter: none;
+-webkit-filter: grayscale(0);
+}
+
+/*HELPER CLASSES*/
+.padding-0 { padding: 0;}
+.padding-top-25 { padding-top: 25px !important; }
+
+.margin-top-100 { margin-top: 100px; }
+
+.margin-bottom-100 { margin-bottom: 100px; }
+.margin-bottom-50 { margin-bottom: 50px; }
+.margin-bottom-25 { margin-bottom: 25px; }
+
+.padding-bottom-25 { padding-bottom: 25px !important; }
+
+.josefin-font {font-family: 'Josefin Slab', serif;}
+.grand-font {font-family: 'Grand Hotel', cursive;}
+
+.big-text {font-size: 50px;}
+.med-text {font-size: 27px;}
+.small-text {font-size: 18px;}
+
+.float-left {float: left;}
+.float-right {float: right;}
+
+.vertical-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.col-centered {
+    display: table;
+    margin: 0 auto;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+/*IMAGES*/
+.span12 img { width: 100%; height: 100%; }
+
+.logo-img {width: 100%; height: 100%; vertical-align: middle}
+
+.bplusb-heart img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px; 
+  height: 100px}
+
+/*PARALLAX IMAGE*/
+.parallax-window {
+    min-height: 800px;
+    background: transparent;
+}
+
+/*BOOTSTRAP OVERRIDES*/
+.row {
+  max-width: 1280px !important;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1000px) { 
+  .travel-img { width: 300px; height: 120px }
+  .parallax-window {
+    min-height: 700px; /* double check this */
+ }
+}
+
+
+@media (max-width: 700px) { 
+  .parallax-window {
+    min-height: 450px;
+ }
+}
+
+@media (max-width: 500px) {
+  .credits-box {
+    background-color: #C0C0C0;
+    min-height: 450px;
+  }
+  
+  .parallax-window {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+/*add fix fox timeline section*/
+.event-float {float: none;}
+}
+
+/*IMAGE CIRCLES*/
+.col-centered-demo:hover .circle-text {
+  display: block;
+}
+
+.col-centered-demo {
+    display:inline-block;
+    float:none;
+    position: relative;
+    margin-right:-4px;
+}
+
+.img-circle {margin-top: 10px;}
+
+.circle-text {
+    display: none;
+    position: absolute; 
+    top: 25%; 
+    left: 0; 
+    width: 100%; 
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #2a8b43;
+   /*  #fecb72; */
+    font-weight: bolder;
+    font-family: 'Josefin Sans';
+}
+
+.img-circle:hover .circle-text { display: block; }
+
+.col-centered-demo img {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.col-centered-demo:hover img { opacity:.075; }
+
+
+.note-text { color: #e74c3c;}
