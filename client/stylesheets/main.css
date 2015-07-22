@@ -180,7 +180,7 @@ filter: none;
 }
 
 @media (max-width: 500px) {
-/*add fix fox timeline section*/
+/*add fix for timeline section*/
 .event-float {float: none;}
 }
 
@@ -190,10 +190,10 @@ filter: none;
 }
 
 .col-centered-demo {
-    display:inline-block;
-    float:none;
-    position: relative;
-    margin-right:-4px;
+  display:inline-block;
+  float:none;
+  position: relative;
+  margin-right:-4px;
 }
 
 .img-circle {margin-top: 10px;}
