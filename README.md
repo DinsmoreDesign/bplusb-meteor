@@ -1,4 +1,4 @@
-Wedding website
+Wedding website with meteor
 
-https://github.com/jordansissel/heroku-buildpack-meteor
+Deployment => https://github.com/jordansissel/heroku-buildpack-meteor
 
