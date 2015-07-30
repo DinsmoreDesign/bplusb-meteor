@@ -11,11 +11,12 @@ if (Meteor.isClient) {
 
       // === does not use type conversion
       // == uses type conversion
-      if (password == 1) {
-        Guests.insert({
-          name: name,
-          createdAt: new Date()
-        })
+      if (password == Meteor.settings.public.test) {
+        alert('nailed it!');
+        // Guests.insert({
+        //   name: name,
+        //   createdAt: new Date()
+        // })
       }
 
       // Clear Form
