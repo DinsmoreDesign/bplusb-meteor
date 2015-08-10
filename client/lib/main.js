@@ -1,6 +1,15 @@
 $(document).ready(function() {
   startPictureGallery();
   weddingParty();
+
+  $('#numGuests').on('change',function(){
+      if( $(this).val()===1){
+        $("#oneGuest").show()
+      } else {
+        $("#twoGuests").hide()
+      }
+  });
+
 });
 
 function startPictureGallery() {
@@ -174,3 +183,6 @@ function makeList(lowEnd, highEnd) {
   }
   return list
 }
+
+
+

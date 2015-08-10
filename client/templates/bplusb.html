@@ -33,26 +33,13 @@
       </div>
     </div> <!-- END WEDDING CARTOON -->
 
-    <div class="event-info-box margin-bottom-50"> <!-- START EVENT INFO -->
-      <div class="container">
-        <div class="span12 padding-0 margin-bottom-50">
-          <img src="/banners/event_info_banner.png" />
-        </div>
-        
-
-
-<!-- TESTING RSVP -->
-<div class="row">
-<div class="col-md-12 col-centered padding-bottom-25">
-      <h1 class="text-center">RSVP HERE</h1>
-
-      <div class="text-center">
-      <a href='' data-toggle="modal" data-target="#myModal">
-          <img class="center img-circle" height="200px" width="230px" src="icons/mail-icon.png"/>
-      </a>
-      </div>
-</div>
-</div>
+<!-- START RSVP -->
+  <div class="span12 padding-0 margin-bottom-50">
+    <a href='' data-toggle="modal" data-target="#myModal">
+      <img src="icons/rsvp_icon.png" />
+    </a>
+  </div>
+<!-- END RSVP -->
 
 <!-- RSVP MODAL -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -64,7 +51,22 @@
       </div>
 
       <div class="modal-body">
+      
+      <!-- how many guests do you have?
+      show that number of input boxes -->
+        <div class="form-group">
+        <!-- http://www.formget.com/create-multiple-form-fields-based-on-selection-jquery/ -->
+            <label for="exampleInputEmail1">How many guests?</label>
+            <select name="carlist" form="carform">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+          </div>
+
         <form class="new-task">
+
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="text" placeholder="Name" />
@@ -73,6 +75,11 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Password</label>
             <input type="password" class="form-control" name="password" placeholder="Password" />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Message</label>
+            <textarea class="form-control" rows="3"></textarea>
           </div>
 
           <div class="form-group">
@@ -88,12 +95,13 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!-- END RSVP MODAL -->
 
-
-
-
-
-
+    <div class="event-info-box margin-bottom-50"> <!-- START EVENT INFO -->
+      <div class="container">
+        <div class="span12 padding-0 margin-bottom-50">
+          <img src="/banners/event_info_banner.png" />
+        </div>
 
 
         <div class="row">

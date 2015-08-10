@@ -13,10 +13,10 @@ if (Meteor.isClient) {
       // == uses type conversion
       if (password == Meteor.settings.public.test) {
         alert('nailed it!');
-        // Guests.insert({
-        //   name: name,
-        //   createdAt: new Date()
-        // })
+        Guests.insert({
+          name: name,
+          createdAt: new Date()
+        })
       }
 
       // Clear Form

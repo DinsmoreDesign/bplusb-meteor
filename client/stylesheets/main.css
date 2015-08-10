@@ -18,7 +18,7 @@ a:hover { text-decoration: none;  font-weight: bold;}
   margin-bottom:0;
 }
 
-.bplusb-box { margin-bottom: 50px}
+.bplusb-box { margin-bottom: 0px} /*change due to rsvp icon*/
 
 /*EVENTS INFO SECTION*/
 .event-info-box {}
@@ -151,7 +151,8 @@ filter: none;
 
 /*PARALLAX IMAGE*/
 .parallax-window {
-    min-height: 800px;
+    /*min-height: 800px;*/ /*due to rsvp change*/
+    min-height: 850px;
     background: transparent;
 }
 
@@ -230,3 +231,7 @@ filter: none;
 
 
 .note-text { color: #e74c3c;}
+
+textarea {
+  resize: vertical; /* user can resize vertically, but width is fixed */
+}
