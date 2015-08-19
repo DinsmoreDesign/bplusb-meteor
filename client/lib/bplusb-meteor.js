@@ -1,6 +1,7 @@
 Guests = new Mongo.Collection("guests");
 
 // Not sure if conditionals are necessary
+// meteor run --settings settings.json
 if (Meteor.isClient) {
 
   Template.bplusb.events({
@@ -8,20 +9,23 @@ if (Meteor.isClient) {
       event.preventDefault();
       var name = event.target.text.value
       var password = event.target.password.value
+      var message = event.target.message.value
 
       // === does not use type conversion
       // == uses type conversion
       if (password == Meteor.settings.public.test) {
-        alert('nailed it!');
         Guests.insert({
           name: name,
+          // email: email
+          message: message,
           createdAt: new Date()
         })
       }
 
+      $('.modal-body').html('<h1>Thanks</h1>')
       // Clear Form
-      event.target.text.value = ""; 
-      event.target.password.value = "";
+      // event.target.text.value = ""; 
+      // event.target.password.value = "";
     }
   });
 }
