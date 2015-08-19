@@ -24,6 +24,10 @@ $(document).ready(function() {
     }
   })
 
+  $("#messageText").keyup(function(){
+    $("#count").text("Characters left: " + (200 - $(this).val().length));
+  });
+
 });
 
 function startPictureGallery() {

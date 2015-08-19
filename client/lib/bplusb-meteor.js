@@ -13,6 +13,7 @@ if (Meteor.isClient) {
 
       // === does not use type conversion
       // == uses type conversion
+
       if (password == Meteor.settings.public.test) {
         Guests.insert({
           name: name,
