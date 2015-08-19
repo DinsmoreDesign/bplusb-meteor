@@ -10,6 +10,20 @@ $(document).ready(function() {
       }
   });
 
+
+  $(".name-2-input").hide();
+  $('select#guestCount').change(function() {
+    var select_value = $('option:selected').val();
+    
+    if (select_value == 1) {
+      $(".name-2-input").hide();
+    } else if ( select_value == 2) {
+      $(".name-2-input").show();
+    } else {
+      // please include any additional names in your message...
+    }
+  })
+
 });
 
 function startPictureGallery() {

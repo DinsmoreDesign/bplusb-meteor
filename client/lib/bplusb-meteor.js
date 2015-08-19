@@ -7,7 +7,7 @@ if (Meteor.isClient) {
   Template.bplusb.events({
     "submit .new-task": function (event) {
       event.preventDefault();
-      var name = event.target.text.value
+      var name = event.target.nameOne.value
       var password = event.target.password.value
       var message = event.target.message.value
 
@@ -23,13 +23,6 @@ if (Meteor.isClient) {
       }
 
       $('.modal-body').html('<h1>Thanks</h1>')
-      // Clear Form
-      // event.target.text.value = ""; 
-      // event.target.password.value = "";
     }
   });
-}
-
-if (Meteor.isServer) {
-
 }
