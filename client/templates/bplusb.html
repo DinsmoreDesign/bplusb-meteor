@@ -51,19 +51,19 @@
         </div>
 
         <div class="modal-body">
-          <div class="alert alert-danger" role="alert">Error</div>
-          
-          <div class="alert alert-success" role="alert">Get pumped!</div>
+          <div class="alert alert-danger flash-error" role="alert" style="display: none;">Error</div>
+
+          <div class="alert alert-success flash-good" role="alert" style="display: none;">Get pumped!</div>
 
           <div class="guest-info-form">
             <form class="new-task" role="form">
 
-              <div class="form-group">
+              <div class="form-group password-group">
                 <label for="password">Please enter the password shown on your invitation here:</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" />
               </div>
 
-              <div class="form-group">
+              <div class="form-group numGuests-group">
                 <label for="guests">How many guests?</label>
                 <br>
                 <label class="radio-inline">
@@ -74,12 +74,12 @@
                 </label>
               </div>
 
-              <div class="form-group">
+              <div class="form-group names-group">
                 <label for="name">Name(s):</label>
                 <input type="text" class="form-control" name="names" placeholder="Name" />
               </div>
 
-              <div class="form-group">
+              <div class="form-group attend-group">
                 <label for="guests">Will you be joining us?</label>
                 <br>
                 <label class="radio-inline">
