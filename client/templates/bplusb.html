@@ -1,320 +1,337 @@
 <template name="bplusb">
-<header class="main_h">
-  <div class="row">
-    <div class="mobile-toggle">
-      <span></span><span></span><span></span> <!-- number of bars in the mobile toggle -->
-    </div>
-    <div class="text-center">
-      <nav>
-        <ul>
-          <li><a href=".bplusb-box">b+b</a></li>
-
-          <li><a href=".event-info-box">event info</a></li>
-
-          <li><a href=".travel-box">travel</a></li>
-
-          <li><a href=".wedding-party-box">wedding party</a></li>
-
-          <li><a href=".gallery-box">gallery</a></li>
-
-          <li><a href=".registry-box">registry</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<!-- <div class="container"> -->
-    <div class="bplusb-box"> <!-- START WEDDING CARTOON -->
-      <div class="container">
-        <div class="span12 padding-0">
-          <div class="parallax-window padding-top-25" data-parallax="scroll" data-image-src="/images/wedding_cartoon.jpg"></div>
-        </div>
+  <header class="main_h">
+    <div class="row">
+      <div class="mobile-toggle">
+        <span></span><span></span><span></span> <!-- number of bars in the mobile toggle -->
       </div>
-    </div> <!-- END WEDDING CARTOON -->
+      <div class="text-center">
+        <nav>
+          <ul>
+            <li><a href=".bplusb-box">b+b</a></li>
 
-<!-- START RSVP -->
+            <li><a href=".event-info-box">event info</a></li>
+
+            <li><a href=".travel-box">travel</a></li>
+
+            <li><a href=".wedding-party-box">wedding party</a></li>
+
+            <li><a href=".gallery-box">gallery</a></li>
+
+            <li><a href=".registry-box">registry</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- <div class="container"> -->
+  <div class="bplusb-box"> <!-- START WEDDING CARTOON -->
+    <div class="container">
+      <div class="span12 padding-0">
+        <div class="parallax-window padding-top-25" data-parallax="scroll" data-image-src="/images/wedding_cartoon.jpg"></div>
+      </div>
+    </div>
+  </div> <!-- END WEDDING CARTOON -->
+
+  <!-- START RSVP -->
   <div class="span12 padding-0 margin-bottom-50">
     <a href='' data-toggle="modal" data-target="#myModal">
       <img src="/icons/rsvp_icon.png" />
     </a>
   </div>
-<!-- END RSVP -->
+  <!-- END RSVP -->
 
-<!-- RSVP MODAL -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">RSVP</h4>
-      </div>
-
-      <div class="modal-body">
-      <!-- how many guests do you have?
-      show that number of input boxes -->
-        <div class="form-group">
-        <!-- http://www.formget.com/create-multiple-form-fields-based-on-selection-jquery/ -->
-          <label for="guests">How many guests?</label>
-          <select id="guestCount" name="guest-count">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">More</option>
-          </select>
+  <!-- RSVP MODAL -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">RSVP</h4>
         </div>
 
-        <div class="guest-info-form">
-          <form class="new-task" role="form">
-            <div class="form-group">
-              <label for="name">Guest One Name</label>
-              <input type="text" class="form-control" name="nameOne" placeholder="Name" />
-            </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" role="alert">Error</div>
+          
+          <div class="alert alert-success" role="alert">Get pumped!</div>
 
-            <div class="form-group name-2-input">
-              <label for="nameTwo">Guest Two Name</label>
-              <input type="text" class="form-control" name="nameTwo" placeholder="Name" />
-            </div>
+          <div class="guest-info-form">
+            <form class="new-task" role="form">
 
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Password" />
-            </div>
+              <div class="form-group">
+                <label for="password">Please enter the password shown on your invitation here:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" />
+              </div>
 
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea maxlength="200" id="messageText" name="message" class="form-control" rows="3"></textarea>
-              <div id="count"></div>
-            </div>
+              <div class="form-group">
+                <label for="guests">How many guests?</label>
+                <br>
+                <label class="radio-inline">
+                <input type="radio" name="numGuests" id="inlineRadio1" value="1"> 1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="numGuests" id="inlineRadio2" value="2"> 2
+                </label>
+              </div>
 
-            <div class="form-group">
-              <button value="Submit" class="btn btn-default">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
+              <div class="form-group">
+                <label for="name">Name(s):</label>
+                <input type="text" class="form-control" name="names" placeholder="Name" />
+              </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- END RSVP MODAL -->
+              <div class="form-group">
+                <label for="guests">Will you be joining us?</label>
+                <br>
+                <label class="radio-inline">
+                  <input type="radio" name="willAttend" value="true"> Yes, wouldn't miss it!
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="willAttend" value="false"> Sadly can't make it
+                </label>
+              </div>
 
-    <div class="event-info-box margin-bottom-50"> <!-- START EVENT INFO -->
-      <div class="container">
-        <div class="span12 padding-0 margin-bottom-50">
-          <img src="/banners/event_info_banner.png" />
-        </div>
+              <div class="form-group">
+                <label for="dietText">If you have any special dietary requirements, please indicate here:</label>
+                <textarea maxlength="200" id="dietText" name="dietText" class="form-control" rows="3"></textarea>
+                <div id="dietCount"></div>
+              </div>
 
+              <div class="form-group">
+                <label for="noteText">Leave us a note!</label>
+                <textarea maxlength="200" id="noteText" name="noteText" class="form-control" rows="3"></textarea>
+                <div id="noteCount"></div>
+              </div>
 
-        <div class="row">
-          <div class="col-md-6 col-centered padding-bottom-25">
-            <table class="events-directions-table">
-              <tr>
-                <td>
-                  <span class="grand-font big-text">celebrate with us at</span>
-                  <br>
-                  <span class="josefin-font med-text">THE ASHFORD ESTATE</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>
-                    <div class="float-left">
-                      <span class="josefin-font med-text">located in <br> Allentown, <br>   New Jersey</span>
-                    </div>
-
-                    <img class="center" src="icons/nj_icon.png" />  
-                  </div>
-
-                </td>
-              </tr>
-              <tr>
-                <td class="padding-top-25">
-                  <a href="http://www.theashfordestate.com/directions.php" target="_blank">
-                    <button type="button" class="hvr-wobble-skew directions-btn josefin-font btn btn-success btn-lg ">View Driving Directions</button>
-                  </a>
-                </td>
-              </tr>
-            </table>
+              <div class="form-group">
+                <button value="Submit" class="btn btn-default">Thank You!</button>
+              </div>
+            </form>
           </div>
 
-          <div class="col-md-6 col-centered">
-            <table class="events-timeline-table">
-              <tr>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- END RSVP MODAL -->
+
+  <div class="event-info-box margin-bottom-50"> <!-- START EVENT INFO -->
+    <div class="container">
+      <div class="span12 padding-0 margin-bottom-50">
+        <img src="/banners/event_info_banner.png" />
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6 col-centered padding-bottom-25">
+          <table class="events-directions-table">
+            <tr>
+              <td>
+                <span class="grand-font big-text">celebrate with us at</span>
+                <br>
+                <span class="josefin-font med-text">THE ASHFORD ESTATE</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  <div class="float-left">
+                    <span class="josefin-font med-text">located in <br> Allentown, <br>   New Jersey</span>
+                  </div>
+
+                  <img class="center" src="icons/nj_icon.png" />  
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <td class="padding-top-25">
+                <a href="http://www.theashfordestate.com/directions.php" target="_blank">
+                  <button type="button" class="hvr-wobble-skew directions-btn josefin-font btn btn-success btn-lg ">View Driving Directions</button>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-md-6 col-centered">
+          <table class="events-timeline-table">
+            <tr>
               <!-- DONT FLOAT LEFT -->
-                <td align="center">
-                  <div class="event-icon event-float">
-                    <img src="icons/games_icon.png" />
-                  </div>
-                    <span class="med-text josefin-font">4:30 PM</span>
-                    <br>
-                    <span class="med-text josefin-font">refreshments &amp; games</span>
-                </td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <div class="event-icon event-float">
-                    <img src="icons/ceremony_icon.png" />
-                  </div>
-                  <span class="med-text josefin-font">5:30 PM</span>
-                  <br>
-                  <span class="med-text josefin-font">ceremony</span>
-                </td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <div class="event-icon event-float">
-                    <img class="rec-icon" src="icons/reception_icon.png" />
-                  </div>
-                  <span class="med-text josefin-font">6:00 PM</span>
-                  <br>
-                  <span class="med-text josefin-font">eat, drink, &amp; be merry</span>
-                </td>
-              </tr>
-            </table>
-          </div>
+              <td align="center">
+                <div class="event-icon event-float">
+                  <img src="icons/games_icon.png" />
+                </div>
+                <span class="med-text josefin-font">4:30 PM</span>
+                <br>
+                <span class="med-text josefin-font">refreshments &amp; games</span>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">
+                <div class="event-icon event-float">
+                  <img src="icons/ceremony_icon.png" />
+                </div>
+                <span class="med-text josefin-font">5:30 PM</span>
+                <br>
+                <span class="med-text josefin-font">ceremony</span>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">
+                <div class="event-icon event-float">
+                  <img class="rec-icon" src="icons/reception_icon.png" />
+                </div>
+                <span class="med-text josefin-font">6:00 PM</span>
+                <br>
+                <span class="med-text josefin-font">eat, drink, &amp; be merry</span>
+              </td>
+            </tr>
+          </table>
         </div>
-        
+      </div>
 
 
-      </div> <!-- END CONTAINER -->
-    </div> <!-- END EVENT INFO -->
 
-    <div class="travel-box margin-bottom-50">
-      <div class="container-fluid">
-        <div class="span12 padding-0 margin-bottom-50">
-          <img src="banners/travel_banner.png" />
+    </div> <!-- END CONTAINER -->
+  </div> <!-- END EVENT INFO -->
+
+  <div class="travel-box margin-bottom-50">
+    <div class="container-fluid">
+      <div class="span12 padding-0 margin-bottom-50">
+        <img src="banners/travel_banner.png" />
+      </div>
+
+      <div class="row padding-bottom-25">
+        <div class="col-md-5">
+          <img class="travel-img" src="banners/airport_text.png" />
         </div>
-
-        <div class="row padding-bottom-25">
-          <div class="col-md-5">
-            <img class="travel-img" src="banners/airport_text.png" />
-          </div>
-          <div class="col-md-7">
+        <div class="col-md-7">
           <span class="med-text josefin-font">For those traveling from afar, you can fly into 
-          <a href="https://www.panynj.gov/airports/newark-liberty.html" target="_blank"><span class="travel-link">Newark Liberty International Airport</span></a>
-           or 
-          <a href="http://www.phl.org/Pages/HomePage.aspx" target="_blank"><span class="travel-link">Philadelphia International Airport</span></a>
+            <a href="https://www.panynj.gov/airports/newark-liberty.html" target="_blank"><span class="travel-link">Newark Liberty International Airport</span></a>
+            or 
+            <a href="http://www.phl.org/Pages/HomePage.aspx" target="_blank"><span class="travel-link">Philadelphia International Airport</span></a>
 
-           </span>
-          </div>
-        </div> <!-- END AIRPOTS ROW -->
+          </span>
+        </div>
+      </div> <!-- END AIRPOTS ROW -->
 
-        <br><br>
+      <br><br>
 
-        <div class="row padding-bottom-25">
-          <div class="col-md-8">
+      <div class="row padding-bottom-25">
+        <div class="col-md-8">
           <span class="med-text josefin-font">
-          A block of rooms is reserved under the Jack/Cutrell Wedding at both the 
-          <a href="http://homewoodsuites3.hilton.com/en/hotels/new-jersey/homewood-suites-by-hilton-hamilton-nj-TTNHAHW/index.html" target="_blank">
-            <span class="travel-link">Homewood Suites in Hamilton, NJ</span>
+            A block of rooms is reserved under the Jack/Cutrell Wedding at both the 
+            <a href="http://homewoodsuites3.hilton.com/en/hotels/new-jersey/homewood-suites-by-hilton-hamilton-nj-TTNHAHW/index.html" target="_blank">
+              <span class="travel-link">Homewood Suites in Hamilton, NJ</span>
             </a>
-          and the 
-          <a href="http://hamptoninn3.hilton.com/en/hotels/new-jersey/hampton-inn-and-suites-robbinsville-TTNHRHX/index.html" target="_blank">
-            <span class="travel-link">Hampton Inn in Robbinsville, NJ</span>
+            and the 
+            <a href="http://hamptoninn3.hilton.com/en/hotels/new-jersey/hampton-inn-and-suites-robbinsville-TTNHRHX/index.html" target="_blank">
+              <span class="travel-link">Hampton Inn in Robbinsville, NJ</span>
             </a>
             <ins class='note-text'>Note:</ins> Rooms at The Hampton Inn and Homewood Suites are being held for the Jack/Cutrell Wedding until SEPTEMBER 7, 2015!
           </span>
-          </div>
-          <div class="col-md-4">
-            <img class="travel-img" src="banners/hotel_text.png" />
-          </div>
-        </div> <!-- END HOTELS ROW -->
-
-
-
-          </div>
-        </div> <!-- END TRAVEL -->
-
-        <div class="wedding-party-box margin-bottom-100">
-          <div class="container-fluid">
-            <div class="span12 padding-0">
-              <img src="banners/wedding_party_banner.png" />
-            </div>
-            <div class="col-centered padding-top-25"><img src="banners/bridesmaids_banner.png" /></div>
-            <div class="row row-centered padding-top-25" id="ladyGallery"></div>
-
-            <div class="col-centered padding-top-25">
-              <img src="banners/groomsmen_banner.png" />
-            </div>
-            <div class="row row-centered padding-top-25" id="dudeGallery"></div>
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-2">
-              
-            </div>
-
-          </div>
         </div>
-
-        <div class="gallery-box margin-bottom-50">
-          <div class="container-fluid">
-            <div class="span12 padding-0">
-              <img src="banners/gallery_banner.png" />
-            </div>
-          </div>
-          <br><br>
-
-          <div id="pictureGallery" class="pictures-box">
-          </div>
+        <div class="col-md-4">
+          <img class="travel-img" src="banners/hotel_text.png" />
         </div>
+      </div> <!-- END HOTELS ROW -->
 
-        <div class="registry-box">
-          <div class="container">
-            <div class="span12 padding-0">
-              <img src="banners/registry_banner.png" />
-            </div>
 
-            <div class="row vertical-center">
-              <div class="col-md-6">
-                <a href="http://www.amazon.com/gp/registry/registry.html?type=wedding&id=V7MG1QWOE6T1&tag=wedch-994-20" target="_blank">
-                <img class="logo-img hvr-bounce-out" src="logo/amazon.png" />
-                </a>
-              </div>
-              <div class="col-md-6">
-                <a href="https://www.anthropologie.com/anthro/registry/listing?registryId=ODAYYZVLMTC0" target="_blank">
-                <img class="logo-img hvr-bounce-out" src="logo/anthropologie.png" />
-                </a>
-              </div>
-            </div>
 
-            <div class="row vertical-center">
-              <div class="col-md-6">
-                <a href="http://www.crateandbarrel.com/gift-registry/brittany-jack-and-benjamin-cutrell/r5288904" target="_blank">
-                <img class="logo-img hvr-bounce-out" src="logo/crate-and-barrel-logo.png" />
-                </a>
-              </div>
-              <div class="col-md-6">
-                <a href="https://secure.westelm.com/registry/400050111/registry-list.html?cm_ite=GiftGiver&cm_pla=WCSearchResults&cm_cat=Registry&bnrid=3900603&cm_ven=WedCh
-" target="_blank">
-                  <img class="logo-img hvr-bounce-out" src="logo/west-elm.png" />
-                </a>
-              </div>
-            </div>
-          </div>
+    </div>
+  </div> <!-- END TRAVEL -->
+
+  <div class="wedding-party-box margin-bottom-100">
+    <div class="container-fluid">
+      <div class="span12 padding-0">
+        <img src="banners/wedding_party_banner.png" />
+      </div>
+      <div class="col-centered padding-top-25"><img src="banners/bridesmaids_banner.png" /></div>
+      <div class="row row-centered padding-top-25" id="ladyGallery"></div>
+
+      <div class="col-centered padding-top-25">
+        <img src="banners/groomsmen_banner.png" />
+      </div>
+      <div class="row row-centered padding-top-25" id="dudeGallery"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-2">
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="gallery-box margin-bottom-50">
+    <div class="container-fluid">
+      <div class="span12 padding-0">
+        <img src="banners/gallery_banner.png" />
+      </div>
+    </div>
+    <br><br>
+
+    <div id="pictureGallery" class="pictures-box">
+    </div>
+  </div>
+
+  <div class="registry-box">
+    <div class="container">
+      <div class="span12 padding-0">
+        <img src="banners/registry_banner.png" />
+      </div>
+
+      <div class="row vertical-center">
+        <div class="col-md-6">
+          <a href="http://www.amazon.com/gp/registry/registry.html?type=wedding&id=V7MG1QWOE6T1&tag=wedch-994-20" target="_blank">
+            <img class="logo-img hvr-bounce-out" src="logo/amazon.png" />
+          </a>
         </div>
-
-        <div class="credits-box">
-            <div class="span12 padding-0">
-              <span class="big-text josefin-font">we can’t wait to celebrate with you!</span>
-
-              <div class="bplusb-heart">
-                <img src="icons/bplusbheart.png" />
-              </div>
-
-              <span class="credits-text small-text josefin-font">
-              designed by the 
-              <a href="http://www.brittanyjack.com/" target="_blank"><strong>bride.</strong></a>
-              built by the 
-              <a href="https://github.com/bcutrell" target="_blank"><strong>groom.</strong></a>
-              illustration by 
-              <a href="http://hitomi.in/" target="_blank"><strong>hitomi</strong></a>
-              </span>
-            </div>
+        <div class="col-md-6">
+          <a href="https://www.anthropologie.com/anthro/registry/listing?registryId=ODAYYZVLMTC0" target="_blank">
+            <img class="logo-img hvr-bounce-out" src="logo/anthropologie.png" />
+          </a>
         </div>
+      </div>
+
+      <div class="row vertical-center">
+        <div class="col-md-6">
+          <a href="http://www.crateandbarrel.com/gift-registry/brittany-jack-and-benjamin-cutrell/r5288904" target="_blank">
+            <img class="logo-img hvr-bounce-out" src="logo/crate-and-barrel-logo.png" />
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="https://secure.westelm.com/registry/400050111/registry-list.html?cm_ite=GiftGiver&cm_pla=WCSearchResults&cm_cat=Registry&bnrid=3900603&cm_ven=WedCh
+          " target="_blank">
+          <img class="logo-img hvr-bounce-out" src="logo/west-elm.png" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="credits-box">
+  <div class="span12 padding-0">
+    <span class="big-text josefin-font">we can’t wait to celebrate with you!</span>
+
+    <div class="bplusb-heart">
+      <img src="icons/bplusbheart.png" />
+    </div>
+
+    <span class="credits-text small-text josefin-font">
+      designed by the 
+      <a href="http://www.brittanyjack.com/" target="_blank"><strong>bride.</strong></a>
+      built by the 
+      <a href="https://github.com/bcutrell" target="_blank"><strong>groom.</strong></a>
+      illustration by 
+      <a href="http://hitomi.in/" target="_blank"><strong>hitomi</strong></a>
+    </span>
+  </div>
+</div>
 </template>

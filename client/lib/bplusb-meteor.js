@@ -1,6 +1,5 @@
 Guests = new Mongo.Collection("guests");
 
-// Not sure if conditionals are necessary
 // meteor run --settings settings.json
 if (Meteor.isClient) {
 
@@ -9,17 +8,30 @@ if (Meteor.isClient) {
       event.preventDefault();
 
       Meteor.call('sendLogMessage');
-      var name = event.target.nameOne.value
-      var password = event.target.password.value
-      var message = event.target.message.value
+
+      var password = event.target.password.value 
+      var numGuests = event.target.numGuests.value 
+      var names = event.target.names.value
+      var willAttend = event.target.willAttend.value
+      var dietText = event.target.dietText.value 
+      var noteText = event.target.noteText.value
       
-      opts = {
-        'name': name,
+      var opts = {
+        'numGuests': numGuests,
+        'name': names,
         'password' : password,
-        'message' : message
-        // add food choice etc
+        'note' : noteText,
+        'diet' : dietText,
+        'attend' : willAttend
       }
-      Meteor.call('insertRsvpData', opts);
+      // add form validations
+      Meteor.call('insertRsvpData', opts, function(error, result) {
+        if (result == true) {
+          alert('Sucess');
+        } else {
+          alert('Fail');
+        }
+      });
 
       $('.modal-body').html('<h1>Thanks</h1>')
     }

@@ -9,6 +9,7 @@ Guests = new Mongo.Collection("guests");
 
 // 3. Add server methods
 // 4. Call them from the client
+
 Meteor.methods({
     // methods go here
     'sendLogMessage': function(){
@@ -17,21 +18,20 @@ Meteor.methods({
     },
     
     'insertRsvpData': function(opts){
-        // code goes here
-        opts['password'];
-        opts['name'];
-        opts['message'];
-
-      if (password == Meteor.settings.rsvpCode) {
+      if (opts.password.toLowerCase() == Meteor.settings.rsvpCode) {
         Guests.insert({
-          name: name,
-          // email: email
-          message: message,
+          names: opts.names,
+          numGuests: opts.numGuests,
+          diet: opts.diet,
+          attend: opts.attend,
+          note: opts.note,
           createdAt: new Date()
         })
+        return true;
+      } else {
+        return false
       }
     }
-
 
 });
 
