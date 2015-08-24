@@ -62,7 +62,8 @@ if (Meteor.isClient) {
         // add form validations
         Meteor.call('insertRsvpData', opts, function(error, result) {
           if (result == true) {
-            $('.modal-body').html('')
+            $('.modal-body').html('');
+            $('.flash-good').show();
             $('.flash-good').html('Success! See you there!')
           } else {
             $('.flash-error').show();
