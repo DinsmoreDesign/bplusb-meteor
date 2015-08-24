@@ -7,21 +7,19 @@ if (Meteor.isClient) {
   Template.bplusb.events({
     "submit .new-task": function (event) {
       event.preventDefault();
+
+      Meteor.call('sendLogMessage');
       var name = event.target.nameOne.value
       var password = event.target.password.value
       var message = event.target.message.value
-
-      // === does not use type conversion
-      // == uses type conversion
-
-      if (password == Meteor.settings.public.test) {
-        Guests.insert({
-          name: name,
-          // email: email
-          message: message,
-          createdAt: new Date()
-        })
+      
+      opts = {
+        'name': name,
+        'password' : password,
+        'message' : message
+        // add food choice etc
       }
+      Meteor.call('insertRsvpData', opts);
 
       $('.modal-body').html('<h1>Thanks</h1>')
     }
