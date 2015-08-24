@@ -66,7 +66,7 @@ if (Meteor.isClient) {
             $('.flash-good').html('Success! See you there!')
           } else {
             $('.flash-error').show();
-            $('.flash-error').html("Incorrect password. If you are having trouble, please email bcutrell13@gmail.com (it's probably my fault");
+            $('.flash-error').html("Incorrect password. If you are having trouble, please email bcutrell13@gmail.com (it's probably my fault) ");
           }
         });
       }
