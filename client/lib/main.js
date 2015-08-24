@@ -2,30 +2,12 @@ $(document).ready(function() {
   startPictureGallery();
   weddingParty();
 
-  $('#numGuests').on('change',function(){
-      if( $(this).val()===1){
-        $("#oneGuest").show()
-      } else {
-        $("#twoGuests").hide()
-      }
+  $("#noteText").keyup(function(){
+    $("#noteCount").text("Characters left: " + (200 - $(this).val().length));
   });
 
-
-  $(".name-2-input").hide();
-  $('select#guestCount').change(function() {
-    var select_value = $('option:selected').val();
-    
-    if (select_value == 1) {
-      $(".name-2-input").hide();
-    } else if ( select_value == 2) {
-      $(".name-2-input").show();
-    } else {
-      // please include any additional names in your message...
-    }
-  })
-
-  $("#messageText").keyup(function(){
-    $("#count").text("Characters left: " + (200 - $(this).val().length));
+  $("#dietText").keyup(function(){
+    $("#dietCount").text("Characters left: " + (200 - $(this).val().length));
   });
 
 });

@@ -1,29 +1,76 @@
 Guests = new Mongo.Collection("guests");
 
-// Not sure if conditionals are necessary
 // meteor run --settings settings.json
 if (Meteor.isClient) {
 
   Template.bplusb.events({
     "submit .new-task": function (event) {
       event.preventDefault();
-      var name = event.target.nameOne.value
-      var password = event.target.password.value
-      var message = event.target.message.value
 
-      // === does not use type conversion
-      // == uses type conversion
+      $('.flash-error').hide();
+      $('.flash-error').html('');
 
-      if (password == Meteor.settings.public.test) {
-        Guests.insert({
-          name: name,
-          // email: email
-          message: message,
-          createdAt: new Date()
-        })
+      Meteor.call('sendLogMessage');
+
+      var password = event.target.password.value 
+      var numGuests = event.target.numGuests.value 
+      var names = event.target.names.value
+      var willAttend = event.target.willAttend.value
+      var dietText = event.target.dietText.value 
+      var noteText = event.target.noteText.value
+      
+      var opts = {
+        'numGuests': numGuests,
+        'names': names,
+        'password' : password,
+        'note' : noteText,
+        'diet' : dietText,
+        'attend' : willAttend
       }
 
-      $('.modal-body').html('<h1>Thanks</h1>')
-    }
+      // Num Guests
+      if ( opts.numGuests.length == 0 ) {
+        $('.numGuests-group').addClass('has-error');
+        
+        $('.flash-error').show();
+        $('.flash-error').html('Please fill out the number of guests that will be attending');
+        return null;
+
+      // Names
+      } else if ( opts.names.length == 0 ) {
+        $('.names-group').addClass('has-error');
+
+        $('.flash-error').show();
+        $('.flash-error').html('Please enter your name(s)');
+
+      // Attend
+      } else if ( opts.attend.length == 0 ) {
+        $('.attend-group').addClass('has-error');
+
+        $('.flash-error').show();
+        $('.flash-error').html('Please check if you will be attending');
+
+      // Password
+      } else if ( opts.password.length == 0 ) {
+        $('.password-group').addClass('has-error');
+
+        $('.flash-error').show();
+        $('.flash-error').html('Please enter the password');
+      
+      } else {
+
+        // add form validations
+        Meteor.call('insertRsvpData', opts, function(error, result) {
+          if (result == true) {
+            $('.modal-body').html('')
+            $('.flash-good').html('Success! See you there!')
+          } else {
+            $('.flash-error').show();
+            $('.flash-error').html("Incorrect password. If you are having trouble, please email bcutrell13@gmail.com (it's probably my fault) ");
+          }
+        });
+      }
+    } // end event method
+
   });
 }
