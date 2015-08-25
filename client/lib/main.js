@@ -9,7 +9,6 @@ $(document).ready(function() {
   $("#dietText").keyup(function(){
     $("#dietCount").text("Characters left: " + (200 - $(this).val().length));
   });
-
 });
 
 function startPictureGallery() {
