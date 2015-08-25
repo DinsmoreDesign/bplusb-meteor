@@ -10,8 +10,6 @@ if (Meteor.isClient) {
       $('.flash-error').hide();
       $('.flash-error').html('');
 
-      Meteor.call('sendLogMessage');
-
       var password = event.target.password.value 
       var numGuests = event.target.numGuests.value 
       var names = event.target.names.value
@@ -27,6 +25,8 @@ if (Meteor.isClient) {
         'diet' : dietText,
         'attend' : willAttend
       }
+
+      Meteor.call('sendLogMessage', opts);
 
       // Num Guests
       if ( opts.numGuests.length == 0 ) {
@@ -67,7 +67,6 @@ if (Meteor.isClient) {
             $('.flash-good').show();
             $('.flash-good').html('Success! See you there!')
           } else {
-            console.log(result);
             $('.flash-error').show();
             $('.flash-error').html("Incorrect password. If you are having trouble, please email bcutrell13@gmail.com (it's probably my fault) ");
           }

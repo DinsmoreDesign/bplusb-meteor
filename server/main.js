@@ -14,6 +14,7 @@ Meteor.methods({
     // methods go here
     'sendLogMessage': function(){
       console.log('Clicked submit button');
+      console.log(opts);
     },
     
     'insertRsvpData': function(opts){
@@ -26,8 +27,11 @@ Meteor.methods({
           note: opts.note,
           createdAt: new Date()
         })
+        console.log('Success!');
+        console.log(opts);
         return true;
       } else {
+        console.log('Fail!');
         console.log(opts);
         return false
       }
