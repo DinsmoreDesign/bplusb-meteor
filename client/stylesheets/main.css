@@ -237,6 +237,47 @@ textarea {
 }
 
 
-.thank-you-submit {
+.thank-you-btn {
+  /*Thank you button: Background Hex # FFE1AF, Text: Josefin Slab Semibold, Hex #FFFFFF*/
+  background-color: #FFE1AF;
+  font-family: 'Josefin Slab';
+  font-weight: 800;
+  color: #FFFFFF;
   cursor: pointer;
+}
+
+.thank-you-btn:hover, .thank-you-btn:active, .thank-you-btn:focus {
+  background-color: #FFE1AF !important;
+}
+
+/*FORM
+Questions/Titles: Lato Hairline, Hex # F38D8B
+"Yes, Wouldn't Miss It/Sadly Can't Make it": Lato Hairline, Hex # 379957
+*/
+
+.coral-text {
+  color: #F38D8B;  
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.green-text {
+  color: #379957;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.yellow-text {
+  color: #FFE1AF
+}
+
+.gray-text {
+  color: #8F8F8F;
+}
+
+.guest-notice-text {
+   margin-left: 10px;
+   font-size: 12px;
+   /*font-weight: bold;*/
+   color: black;
 }

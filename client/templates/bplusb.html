@@ -59,54 +59,56 @@
             <form class="new-task" role="form">
 
               <div class="form-group password-group">
-                <label for="password">Please enter the password shown on your invitation here:</label>
+                <label class="coral-text" for="password">Please enter the password shown on your invitation here:</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" />
               </div>
 
               <div class="form-group numGuests-group">
-                <label for="guests">How many guests?</label>
+                <label class="coral-text" for="guests">How many guests?</label>
                 <br>
                 <input id="guest" type="text" name="numGuests"  style="display: none;">
                 <label class="radio-inline">
-                <input type="radio" value="1" name="guestfill" onclick="$('#attend').val(1);"> 1
+                <input type="radio" value="1" name="guestfill" onclick="$('#guest').val(1);"> 1
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" value="2" name="guestfill" onclick="$('#attend').val(2);"> 2
+                  <input type="radio" value="2" name="guestfill" onclick="$('#guest').val(2);"> 2
                 </label>
-                <span>if you have more than 2 guests....</span>
+                <span class="guest-notice-text">If you have more than 2 guests attending, please write all the names in the "Notes" box below.</span>
               </div>
 
               <div class="form-group names-group">
-                <label for="name">Name(s):</label>
+                <label class="coral-text" for="name">Name(s):</label>
                 <input type="text" class="form-control" name="names" placeholder="Name" />
               </div>
 
               <div class="form-group attend-group">
-                <label for="guests">Will you be joining us?</label>
+                <label class="coral-text" for="guests">Will you be joining us?</label>
                 <br>
                 <input id="attend" type="text" name="willAttend"  style="display: none;">
                 <label class="radio-inline">
-                  <input type="radio" value="true" name="attendfill" onclick="$('#attend').val(true);"> Yes, wouldn't miss it!
+                  <input type="radio" value="true" name="attendfill" onclick="$('#attend').val(true);">
+                  <span class="green-text">Yes, Wouldn't Miss It!</span>
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" value="false" name="attendfill" onclick="$('#attend').val(true);"> Sadly can't make it
+                  <input class="green-text" type="radio" value="false" name="attendfill" onclick="$('#attend').val(true);">
+                  <span class="green-text">Sadly Can't Make it</span>
                 </label>
               </div>
 
               <div class="form-group">
-                <label for="dietText">If you have any special dietary requirements, please indicate here:</label>
+                <label class="coral-text" for="dietText">If you have any special dietary requirements, please indicate here:</label>
                 <textarea maxlength="200" id="dietText" name="dietText" class="form-control" rows="3"></textarea>
                 <div id="dietCount"></div>
               </div>
 
               <div class="form-group">
-                <label for="noteText">Leave us a note!</label>
+                <label class="coral-text" for="noteText">Leave us a note!</label>
                 <textarea maxlength="200" id="noteText" name="noteText" class="form-control" rows="3"></textarea>
                 <div id="noteCount"></div>
               </div>
 
-              <div class="form-group thank-you-submit">
-                <button value="submit" class="btn btn-default">Thank You!</button>
+              <div class="form-group">
+                <button value="submit" class="btn btn-default thank-you-btn btn-lg"><strong>Thank You!</strong></button>
               </div>
             </form>
           </div>
