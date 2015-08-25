@@ -5,6 +5,7 @@ if (Meteor.isClient) {
 
   Template.bplusb.events({
     "submit .new-task": function (event) {
+      try {
       event.preventDefault();
 
       $('.flash-error').hide();
@@ -71,6 +72,9 @@ if (Meteor.isClient) {
             $('.flash-error').html("Incorrect password. If you are having trouble, please email bcutrell13@gmail.com (it's probably my fault) ");
           }
         });
+      }
+      } catch(err) {
+        alert(err);
       }
     } // end event method
 

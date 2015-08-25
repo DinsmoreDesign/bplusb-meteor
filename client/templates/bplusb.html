@@ -66,11 +66,12 @@
               <div class="form-group numGuests-group">
                 <label for="guests">How many guests?</label>
                 <br>
+                <input id="guest" type="text" name="numGuests"  style="display: none;">
                 <label class="radio-inline">
-                <input type="radio" name="numGuests" id="inlineRadio1" value="1"> 1
+                <input type="radio" value="1" name="guestfill" onclick="$('#attend').val(1);"> 1
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="numGuests" id="inlineRadio2" value="2"> 2
+                  <input type="radio" value="2" name="guestfill" onclick="$('#attend').val(2);"> 2
                 </label>
                 <span>if you have more than 2 guests....</span>
               </div>
@@ -83,11 +84,12 @@
               <div class="form-group attend-group">
                 <label for="guests">Will you be joining us?</label>
                 <br>
+                <input id="attend" type="text" name="willAttend"  style="display: none;">
                 <label class="radio-inline">
-                  <input type="radio" name="willAttend" value="true"> Yes, wouldn't miss it!
+                  <input type="radio" value="true" name="attendfill" onclick="$('#attend').val(true);"> Yes, wouldn't miss it!
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="willAttend" value="false"> Sadly can't make it
+                  <input type="radio" value="false" name="attendfill" onclick="$('#attend').val(true);"> Sadly can't make it
                 </label>
               </div>
 
