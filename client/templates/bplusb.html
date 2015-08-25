@@ -59,52 +59,56 @@
             <form class="new-task" role="form">
 
               <div class="form-group password-group">
-                <label for="password">Please enter the password shown on your invitation here:</label>
+                <label class="coral-text" for="password">Please enter the password shown on your invitation here:</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" />
               </div>
 
               <div class="form-group numGuests-group">
-                <label for="guests">How many guests?</label>
+                <label class="coral-text" for="guests">How many guests?</label>
                 <br>
+                <input id="guest" type="text" name="numGuests"  style="display: none;">
                 <label class="radio-inline">
-                <input type="radio" name="numGuests" id="inlineRadio1" value="1"> 1
+                <input type="radio" value="1" name="guestfill" onclick="$('#guest').val(1);"> 1
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="numGuests" id="inlineRadio2" value="2"> 2
+                  <input type="radio" value="2" name="guestfill" onclick="$('#guest').val(2);"> 2
                 </label>
-                <span>if you have more than 2 guests....</span>
+                <span class="guest-notice-text">If you have more than 2 guests attending, please write all the names in the "Notes" box below.</span>
               </div>
 
               <div class="form-group names-group">
-                <label for="name">Name(s):</label>
+                <label class="coral-text" for="name">Name(s):</label>
                 <input type="text" class="form-control" name="names" placeholder="Name" />
               </div>
 
               <div class="form-group attend-group">
-                <label for="guests">Will you be joining us?</label>
+                <label class="coral-text" for="guests">Will you be joining us?</label>
                 <br>
+                <input id="attend" type="text" name="willAttend"  style="display: none;">
                 <label class="radio-inline">
-                  <input type="radio" name="willAttend" value="true"> Yes, wouldn't miss it!
+                  <input type="radio" value="true" name="attendfill" onclick="$('#attend').val(true);">
+                  <span class="green-text">Yes, Wouldn't Miss It!</span>
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="willAttend" value="false"> Sadly can't make it
+                  <input class="green-text" type="radio" value="false" name="attendfill" onclick="$('#attend').val(true);">
+                  <span class="green-text">Sadly Can't Make it</span>
                 </label>
               </div>
 
               <div class="form-group">
-                <label for="dietText">If you have any special dietary requirements, please indicate here:</label>
+                <label class="coral-text" for="dietText">If you have any special dietary requirements, please indicate here:</label>
                 <textarea maxlength="200" id="dietText" name="dietText" class="form-control" rows="3"></textarea>
                 <div id="dietCount"></div>
               </div>
 
               <div class="form-group">
-                <label for="noteText">Leave us a note!</label>
+                <label class="coral-text" for="noteText">Leave us a note!</label>
                 <textarea maxlength="200" id="noteText" name="noteText" class="form-control" rows="3"></textarea>
                 <div id="noteCount"></div>
               </div>
 
-              <div class="form-group thank-you-submit">
-                <button value="submit" class="btn btn-default">Thank You!</button>
+              <div class="form-group">
+                <button value="submit" class="btn btn-default thank-you-btn btn-lg"><strong>Thank You!</strong></button>
               </div>
             </form>
           </div>
@@ -241,11 +245,57 @@
           <img class="travel-img" src="banners/hotel_text.png" />
         </div>
       </div> <!-- END HOTELS ROW -->
-
-
-
     </div>
   </div> <!-- END TRAVEL -->
+
+  <div class="activities-box margin-bottom-50">
+    <div class="row padding-bottom-25 activity-row">
+    
+    <div class="col-md-5">
+      <img class="activity-banner" src="banners/activity_text.png" />
+    </div>
+    
+    <div class="col-md-7 activity-icons">
+      <a href="http://www.creamridgegolfcourse.com/" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/golf.png" /> 
+          Cream Ridge Golf Course
+        </div>
+      </a>
+      <a href="http://lauritawinery.com/" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/wine.png" /> 
+          Laurita Winery
+        </div>
+      </a>
+      <a href="http://www.premiumoutlets.com/outlets/outlet.asp?id=54" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/outlet.png" /> 
+          Jackson Premium Outlets
+        </div>
+      </a>
+      <a href="http://www.groundsforsculpture.org/?gclid=COyfteGdwscCFdCRHwodWMMNNw" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/grounds.png" /> 
+          Grounds for Sculpture
+        </div>
+      </a>
+      <a href="http://terhuneorchards.com/" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/orchard.png" /> 
+          Terhune Orchards
+        </div>
+      </a>
+      <a href="https://www.sixflags.com/greatadventure" target="_blank">
+        <div class="med-text josefin-font">
+          <img class="activity-img" src="icons/flags.png" /> 
+          Six Flags Great Adventure
+        </div>
+      </a>
+
+    </div>
+    </div>
+  </div>
 
   <div class="wedding-party-box margin-bottom-100">
     <div class="container-fluid">
