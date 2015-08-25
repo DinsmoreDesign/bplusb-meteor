@@ -12,11 +12,11 @@ Guests = new Mongo.Collection("guests");
 
 Meteor.methods({
     // methods go here
-    'sendLogMessage': function(){
+    'sendLogMessage': function(opts) {
       console.log('Clicked submit button');
       console.log(opts);
     },
-    
+
     'insertRsvpData': function(opts){
       if (opts.password.toLowerCase() == Meteor.settings.rsvpCode) {
         Guests.insert({

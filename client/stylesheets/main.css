@@ -236,3 +236,7 @@ textarea {
   resize: vertical; /* user can resize vertically, but width is fixed */
 }
 
+
+.thank-you-submit {
+  cursor: pointer;
+}
