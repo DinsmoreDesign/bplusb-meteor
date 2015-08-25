@@ -13,8 +13,7 @@ Guests = new Mongo.Collection("guests");
 Meteor.methods({
     // methods go here
     'sendLogMessage': function(){
-      console.log(Meteor.settings.rsvpCode);
-      console.log('Demo Log Message');
+      console.log('Clicked submit button');
     },
     
     'insertRsvpData': function(opts){
@@ -29,6 +28,7 @@ Meteor.methods({
         })
         return true;
       } else {
+        console.log(opts);
         return false
       }
     }
